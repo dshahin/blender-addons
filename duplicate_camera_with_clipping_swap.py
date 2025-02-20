@@ -1,17 +1,40 @@
+# MIT License
+
+# Copyright (c) 2025 Dan Shahin
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+
 bl_info = {
-    "name": "Duplicate Camera with front and rear Clipping",
+    "name": "Duplicate Camera with front and rear clipping swap",
     "blender": (3, 0, 0),
     "category": "Object",
     "version": (1, 0),
     "author": "Your Name",
-    "description": "Duplicates a camera, sets clipping distances, and renames cameras. Activated via Outliner right-click.",
+    "description": "Duplicates selected camera, sets the new camera clipping end to be the original camera clipping start, and renames cameras. Use with alpha channel and composite in video software to create a layered 3D effect.  Use with batch render add-on to render both cameras at once."
 }
 
 import bpy
 
 class OBJECT_OT_duplicate_camera_with_clipping(bpy.types.Operator):
     bl_idname = "object.duplicate_camera_with_clipping"
-    bl_label = "Duplicate Camera with Clipping"
+    bl_label = "Duplicate Camera with Clipping Swap"
     bl_options = {'REGISTER', 'UNDO'}
 
     @classmethod
